@@ -12,44 +12,17 @@ struct ContentView: View {
         TabView {
             
             
-            VStack {
-                //MARK: CalendarView
-                Text("calendar")
-            }
+            CalendarView()
             .tabItem {
                 Image(systemName: "calendar")
             }
             
-            VStack {
-                Spacer()
-                //MARK: TimerView
-                Text("00: 00")
-                
-                //MARK: MotivationView
-                Text("Effort won’t betray you")
-                
-                //MARK: IconView
-                ZStack {
-                    Circle()
-                        .foregroundColor(.white)
-                    Image("milk_tea")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                }
-                
-                //MARK: LinkView
-                Text("open spotify")
-                
-                Spacer()
-            }
+            TimerView()
             .tabItem {
                 Image(systemName: "house")
             }
             
-            VStack {
-                //MARK: CalendarView
-                Text("settings")
-            }
+            ProfileView()
             .tabItem {
                 Image(systemName: "person.fill")
             }
