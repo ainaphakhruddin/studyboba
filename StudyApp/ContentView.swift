@@ -9,8 +9,52 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            
+            
+            VStack {
+                //MARK: CalendarView
+                Text("calendar")
+            }
+            .tabItem {
+                Image(systemName: "calendar")
+            }
+            
+            VStack {
+                Spacer()
+                //MARK: TimerView
+                Text("00: 00")
+                
+                //MARK: MotivationView
+                Text("Effort won’t betray you")
+                
+                //MARK: IconView
+                ZStack {
+                    Circle()
+                        .foregroundColor(.white)
+                    Image("milk_tea")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+                
+                //MARK: LinkView
+                Text("open spotify")
+                
+                Spacer()
+            }
+            .tabItem {
+                Image(systemName: "house")
+            }
+            
+            VStack {
+                //MARK: CalendarView
+                Text("settings")
+            }
+            .tabItem {
+                Image(systemName: "person.fill")
+            }
+        }
+        
     }
 }
 
