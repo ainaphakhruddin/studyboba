@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct TimerView: View {
+    //ui will be updated baed on the state of the timer
+    @State var timermode: TimerMode = .initial
+
+    
     @State private var timeRemaining = 100
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -29,15 +33,25 @@ struct TimerView: View {
             
             
             //MARK: MotivationView
-            Text("Effort won’t betray you")
+            Image("Effort won’t betray you")
             
             //MARK: IconView
             ZStack {
                 Circle()
                     .foregroundColor(.white)
-                Image("milk_tea")
+                Image(systemName: timermode == .running ? "pause.circle.fill" : "play.circle.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+//                if timermode == .initial {
+//                    Picker(selection: $selectedTimePicker, label: Text("")){
+//                        ForEach(0..<availableMinutes.count)
+//                        {min in
+//                            Text("\(min) min")
+//
+//                        }
+//                    }
+//
+//                }
             }
             
             //MARK: LinkView

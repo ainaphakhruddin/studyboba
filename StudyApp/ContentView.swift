@@ -19,7 +19,7 @@ struct ContentView: View {
             
             TimerView()
             .tabItem {
-                Image(systemName: "house")
+                Image(systemName: "deskclock")
             }
             
             ProfileView()

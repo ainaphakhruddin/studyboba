@@ -14,6 +14,8 @@
 		0C47317A25B4AFD600E02BBE /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47317925B4AFD600E02BBE /* TimerView.swift */; };
 		0C47317D25B4AFF700E02BBE /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47317C25B4AFF700E02BBE /* CalendarView.swift */; };
 		0C47318025B4B00700E02BBE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47317F25B4B00700E02BBE /* ProfileView.swift */; };
+		0C47318325B91C4400E02BBE /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47318225B91C4400E02BBE /* Timer.swift */; };
+		0C47318625B91D9C00E02BBE /* SetTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47318525B91D9C00E02BBE /* SetTimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		0C47317925B4AFD600E02BBE /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		0C47317C25B4AFF700E02BBE /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		0C47317F25B4B00700E02BBE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		0C47318225B91C4400E02BBE /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		0C47318525B91D9C00E02BBE /* SetTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				0C47317925B4AFD600E02BBE /* TimerView.swift */,
 				0C47317C25B4AFF700E02BBE /* CalendarView.swift */,
 				0C47317F25B4B00700E02BBE /* ProfileView.swift */,
+				0C47318225B91C4400E02BBE /* Timer.swift */,
+				0C47318525B91D9C00E02BBE /* SetTimerView.swift */,
 			);
 			path = StudyApp;
 			sourceTree = "<group>";
@@ -148,8 +154,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C47317A25B4AFD600E02BBE /* TimerView.swift in Sources */,
+				0C47318625B91D9C00E02BBE /* SetTimerView.swift in Sources */,
 				0C47316C25B38E1400E02BBE /* ContentView.swift in Sources */,
 				0C47318025B4B00700E02BBE /* ProfileView.swift in Sources */,
+				0C47318325B91C4400E02BBE /* Timer.swift in Sources */,
 				0C47317D25B4AFF700E02BBE /* CalendarView.swift in Sources */,
 				0C47316A25B38E1400E02BBE /* StudyAppApp.swift in Sources */,
 			);
