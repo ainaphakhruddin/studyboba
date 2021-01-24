@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    //ui will be updated baed on the state of the timer
+    @ObservedObject var studyTimer = TimerManager()
+    
+    @State private var timerRunning = false
+
     var body: some View {
         TabView {
             
@@ -16,10 +21,11 @@ struct ContentView: View {
             .tabItem {
                 Image(systemName: "calendar")
             }
-            
-            TimerView()
-            .tabItem {
-                Image(systemName: "deskclock")
+            if studyTimer.timerMode == .initial {
+                SetTimerView()
+                .tabItem {
+                    Image(systemName: "deskclock")
+                }
             }
             
             ProfileView()
@@ -27,6 +33,7 @@ struct ContentView: View {
                 Image(systemName: "person.fill")
             }
         }
+
         
     }
 }

@@ -9,17 +9,16 @@ import SwiftUI
 
 struct TimerView: View {
     //ui will be updated baed on the state of the timer
-    @State var timermode: TimerMode = .initial
-
+    @ObservedObject var studyTimer = TimerManager()
     
-    @State private var timeRemaining = 100
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
+    @State private var timeRemaining = 15
+    @State private var isActive = true //is the app active?
+        
     var body: some View {
         VStack {
             Spacer()
             //MARK: TimerView
-            Text("\(timeRemaining)")
+            Text(secondsToMinutesAndSeconds(seconds: studyTimer.secondsLeft))
                 .font(.largeTitle)
                 .foregroundColor(.white)
                 .padding(.horizontal, 20)
@@ -29,40 +28,60 @@ struct TimerView: View {
                         .fill(Color.black)
                         .opacity(0.75)
                 )
-            
+
             
             
             //MARK: MotivationView
-            Image("Effort won’t betray you")
+            Text("Effort won’t betray you")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             
             //MARK: IconView
             ZStack {
-                Circle()
-                    .foregroundColor(.white)
-                Image(systemName: timermode == .running ? "pause.circle.fill" : "play.circle.fill")
+                Image("paper_crane")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-//                if timermode == .initial {
-//                    Picker(selection: $selectedTimePicker, label: Text("")){
-//                        ForEach(0..<availableMinutes.count)
-//                        {min in
-//                            Text("\(min) min")
-//
-//                        }
-//                    }
-//
-//                }
+                
+
             }
-            
             //MARK: LinkView
             Text("open spotify")
             
+            Text(studyTimer.timerMode == .running ? "pause" : "resume")
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 5)
+                .background(
+                    Capsule()
+                        .fill(Color.black)
+                        .opacity(0.75)
+                )
+                .onTapGesture {
+                    if (studyTimer.timerMode == .running) {
+                        studyTimer.pause()
+                    }
+                    else {
+                        studyTimer.resume()
+                    }
+                    
+                }
+            
+
+            
             Spacer()
         }
-        .onReceive(timer) { time in
-            if self.timeRemaining > 0 {
-                self.timeRemaining -= 1
-            }
+        .onAppear(){
+            self.studyTimer.start()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            self.isActive = false
+            studyTimer.pause()
+            
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            self.isActive = true
+            studyTimer.resume()
+            
         }
     }
 }
