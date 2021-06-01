@@ -16,6 +16,9 @@
 		0C47318025B4B00700E02BBE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47317F25B4B00700E02BBE /* ProfileView.swift */; };
 		0C47318325B91C4400E02BBE /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47318225B91C4400E02BBE /* Timer.swift */; };
 		0C47318625B91D9C00E02BBE /* SetTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C47318525B91D9C00E02BBE /* SetTimerView.swift */; };
+		0C47318A25C0FD3D00E02BBE /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C47318925C0FD3D00E02BBE /* SpotifyiOS.framework */; };
+		0C6EDB5125CA3A6A00F2D0C6 /* ImageProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6EDB5025CA3A6A00F2D0C6 /* ImageProgressView.swift */; };
+		0CC3F4AF2663E56000C52829 /* SpotifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC3F4AE2663E56000C52829 /* SpotifyController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,10 @@
 		0C47317F25B4B00700E02BBE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0C47318225B91C4400E02BBE /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		0C47318525B91D9C00E02BBE /* SetTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimerView.swift; sourceTree = "<group>"; };
+		0C47318925C0FD3D00E02BBE /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
+		0C47319D25C10DDA00E02BBE /* StudyApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StudyApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		0C6EDB5025CA3A6A00F2D0C6 /* ImageProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProgressView.swift; sourceTree = "<group>"; };
+		0CC3F4AE2663E56000C52829 /* SpotifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C47318A25C0FD3D00E02BBE /* SpotifyiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +54,8 @@
 		0C47315D25B38E1400E02BBE = {
 			isa = PBXGroup;
 			children = (
+				0C47319D25C10DDA00E02BBE /* StudyApp-Bridging-Header.h */,
+				0C47318825C0FCEC00E02BBE /* Frameworks */,
 				0C47316825B38E1400E02BBE /* StudyApp */,
 				0C47316725B38E1400E02BBE /* Products */,
 			);
@@ -72,6 +82,8 @@
 				0C47317F25B4B00700E02BBE /* ProfileView.swift */,
 				0C47318225B91C4400E02BBE /* Timer.swift */,
 				0C47318525B91D9C00E02BBE /* SetTimerView.swift */,
+				0C6EDB5025CA3A6A00F2D0C6 /* ImageProgressView.swift */,
+				0CC3F4AE2663E56000C52829 /* SpotifyController.swift */,
 			);
 			path = StudyApp;
 			sourceTree = "<group>";
@@ -82,6 +94,14 @@
 				0C47317025B38E1500E02BBE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0C47318825C0FCEC00E02BBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C47318925C0FD3D00E02BBE /* SpotifyiOS.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,6 +135,7 @@
 				TargetAttributes = {
 					0C47316525B38E1400E02BBE = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -153,9 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C6EDB5125CA3A6A00F2D0C6 /* ImageProgressView.swift in Sources */,
 				0C47317A25B4AFD600E02BBE /* TimerView.swift in Sources */,
 				0C47318625B91D9C00E02BBE /* SetTimerView.swift in Sources */,
 				0C47316C25B38E1400E02BBE /* ContentView.swift in Sources */,
+				0CC3F4AF2663E56000C52829 /* SpotifyController.swift in Sources */,
 				0C47318025B4B00700E02BBE /* ProfileView.swift in Sources */,
 				0C47318325B91C4400E02BBE /* Timer.swift in Sources */,
 				0C47317D25B4AFF700E02BBE /* CalendarView.swift in Sources */,
@@ -287,17 +310,29 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StudyApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 78DUD35Y2F;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = StudyApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aina.tutorials.StudyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "StudyApp-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "StudyApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -308,17 +343,28 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StudyApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 78DUD35Y2F;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = StudyApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aina.tutorials.StudyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "StudyApp-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "StudyApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

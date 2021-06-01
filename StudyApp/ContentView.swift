@@ -4,18 +4,15 @@
 //
 //  Created by Aina Phakhruddin on 1/16/21.
 //
-
 import SwiftUI
 
 struct ContentView: View {
-    //ui will be updated baed on the state of the timer
+    //ui will be updated based on the state of the timer
     @ObservedObject var studyTimer = TimerManager()
-    
     @State private var timerRunning = false
 
     var body: some View {
         TabView {
-            
             
             CalendarView()
             .tabItem {
@@ -34,11 +31,13 @@ struct ContentView: View {
             }
         }
 
+
         
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+//    var spt = SpotifyController()
     static var previews: some View {
         ContentView()
     }

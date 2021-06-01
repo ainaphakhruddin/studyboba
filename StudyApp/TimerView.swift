@@ -36,13 +36,14 @@ struct TimerView: View {
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             
             //MARK: IconView
-            ZStack {
-                Image("paper_crane")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                
 
+            VStack {
+                ImageProgressView(studyTimer: studyTimer)
             }
+//            .onReceive(studyTimer) {_ in
+//                let time = Double(studyTimer.secondsLeft / studyTimer.totalTimeinSeconds)
+//            }
+
             //MARK: LinkView
             Text("open spotify")
             

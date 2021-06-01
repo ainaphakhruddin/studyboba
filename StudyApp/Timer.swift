@@ -10,6 +10,7 @@ import SwiftUI
 
 class TimerManager: ObservableObject {
     @Published var timerMode: TimerMode = .initial
+    @Published var totalTimeinSeconds: Int = 300
     @Published var secondsLeft = UserDefaults.standard.integer(forKey: "timerLength")
     var timer = Timer()
     
