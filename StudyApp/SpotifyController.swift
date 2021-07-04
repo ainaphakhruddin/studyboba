@@ -15,12 +15,14 @@ class SpotifyController: NSObject, ObservableObject {
     
     override init() {
         super.init()
+        //TODO: I need to understand this cancellable stuff
         connectCancellable = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
             .receive(on: DispatchQueue.main)
             .sink { _ in
+                //make this connect cancellable
                 self.connect()
             }
-        
+
         disconnectCancellable = NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)
             .receive(on: DispatchQueue.main)
             .sink { _ in

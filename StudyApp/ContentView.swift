@@ -8,9 +8,10 @@ import SwiftUI
 
 struct ContentView: View {
     //ui will be updated based on the state of the timer
+
     @ObservedObject var studyTimer = TimerManager()
     @State private var timerRunning = false
-
+    @EnvironmentObject var spotifyController: SpotifyController
     var body: some View {
         TabView {
             
@@ -20,9 +21,11 @@ struct ContentView: View {
             }
             if studyTimer.timerMode == .initial {
                 SetTimerView()
+                .environmentObject(spotifyController)
                 .tabItem {
                     Image(systemName: "deskclock")
                 }
+                
             }
             
             ProfileView()
@@ -37,7 +40,6 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-//    var spt = SpotifyController()
     static var previews: some View {
         ContentView()
     }

@@ -10,7 +10,7 @@ import SwiftUI
 struct TimerView: View {
     //ui will be updated baed on the state of the timer
     @ObservedObject var studyTimer = TimerManager()
-    
+
     @State private var timeRemaining = 15
     @State private var isActive = true //is the app active?
         

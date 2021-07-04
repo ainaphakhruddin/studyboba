@@ -14,13 +14,14 @@ struct StudyAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(spotifyController)
                         .onOpenURL { url in
                             spotifyController.setAccessToken(from: url)
                         }
-                        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didFinishLaunchingNotification), perform: { _ in
-                            spotifyController.connect()
-                        })
             
+//                        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didFinishLaunchingNotification), perform: { _ in
+//                            spotifyController.connect()
+//                        })
         }
     }
 }

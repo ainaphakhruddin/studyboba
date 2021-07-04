@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SetTimerView: View {
     @ObservedObject var studyTimer = TimerManager()
+    @EnvironmentObject var spotifyController: SpotifyController
     @State private var showingPicker = false
     @State var selectedTimePicker = 0
     let availableMinutes = Array(0...59)
@@ -76,13 +77,16 @@ struct SetTimerView: View {
 
                 }
                 
-                
+               
                 //TODO: tapping music open options to spotify or apple music
                 Image(systemName: "music.note.house")
-                
-                }
                 .padding()
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .onTapGesture(perform: {
+                        spotifyController.connect()
+                    })
+                }
+               
                 
                 
 
